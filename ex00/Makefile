@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 11:33:50 by elsikira          #+#    #+#              #
-#    Updated: 2025/04/16 12:25:02 by elsikira         ###   ########.fr        #
+#    Updated: 2025/05/19 23:40:10 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ clean:
 
 fclean:
 	rm -f $(NAME)
+	rm -f $(OBJ)
 
 re: fclean all
 
