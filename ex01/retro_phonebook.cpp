@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/05/29 17:38:55 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/06/24 18:36:26 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,10 @@ static std::string	getPrompt(const std::string &fieldName)
 
 	while (prompt.empty())
 	{
+		if (std::cin.eof())
+		{
+			return ("");
+		}
 		std::cout << fieldName << "?\n";
 		std::getline(std::cin, prompt);
 		if (prompt.empty())
