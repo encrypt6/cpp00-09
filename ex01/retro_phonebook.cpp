@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/06/26 19:12:49 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:18:14 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,11 @@ void PhoneBook::add(void)
 	std::string phoneNumber   = getPrompt("Phone Number");
 	std::string darkestSecret = getPrompt("Darkest Secret");
 
-	/*contacts[nextIndex].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+	contacts[nextIndex].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	nextIndex = (nextIndex + 1) % 8;
 	if (count < 8)
 		count++;
 	std::cout << "Contact added successfully!\n";
-	*/
 }
 
 	

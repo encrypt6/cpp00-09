@@ -1,25 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/19 23:52:26 by elsikira          #+#    #+#             */
-/*   Updated: 2025/06/26 19:15:59 by elsikira         ###   ########.fr       */
+/*   Created: 2025/06/26 19:22:04 by elsikira          #+#    #+#             */
+/*   Updated: 2025/06/26 19:22:44 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-class	PhoneBook
-{
-	private:
-		Contact	contacts[8];
-		int		count;
-		int		nextIndex;
+#include "libraries.h"
 
-	public:
-		PhoneBook();
-		void	add();
-		//void	search() const;
-};
 
