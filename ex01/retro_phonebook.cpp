@@ -6,11 +6,26 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/06/26 18:27:51 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/06/26 19:12:49 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libraries.h"
+
+
+static bool	isDigits(const std::string &str)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < str.length())
+	{
+		if (!std::isdigit(str[i]))
+			return (false);
+		++i;
+	}
+	return (!str.empty());
+}
 
 static std::string	getPrompt(const std::string &fieldName)
 {
@@ -22,9 +37,7 @@ static std::string	getPrompt(const std::string &fieldName)
 		if (!std::getline(std::cin, prompt))
 		{
 			if (std::cin.eof())
-			{
 				return ("");
-			}
 			else
 			{
 				std::cin.clear();
@@ -33,7 +46,19 @@ static std::string	getPrompt(const std::string &fieldName)
 			}
 		}
 		else if (prompt.empty())
+		{
 			std::cerr << "Error : " << fieldName << " is empty\n";
+			continue;
+		}
+		if (fieldName == "Phone Number" && !isDigits(prompt))
+		{
+			if (!prompt.empty())
+			{
+				prompt.clear();
+				std::cerr << "Error : only digits are accepted.\n";
+			}
+			continue;
+		}
 	}
 	return (prompt);
 }
@@ -50,7 +75,7 @@ void PhoneBook::add(void)
 	nextIndex = (nextIndex + 1) % 8;
 	if (count < 8)
 		count++;
-	std::cout << "✅ Contact added successfully!\n";
+	std::cout << "Contact added successfully!\n";
 	*/
 }
 
@@ -68,7 +93,7 @@ int	main(void)
 
 		if (std::cin.eof())
 		{
-			std::cout <<"\nEnd of file exiting\n";
+			std::cout <<"\nEnd of file, exiting\n";
 			break ;
 		}
 		if (command == "ADD")
