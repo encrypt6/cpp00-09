@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 11:33:50 by elsikira          #+#    #+#              #
-#    Updated: 2025/05/20 00:13:06 by elsikira         ###   ########.fr        #
+#    Updated: 2025/07/01 19:58:41 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = retro_phonebook.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -6,20 +6,21 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 23:52:26 by elsikira          #+#    #+#             */
-/*   Updated: 2025/06/26 19:15:59 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/07/01 20:03:47 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libraries.h"
+
 class	PhoneBook
 {
-	private:
-		Contact	contacts[8];
-		int		count;
-		int		nextIndex;
-
 	public:
 		PhoneBook();
 		void	add();
 		//void	search() const;
+	private:
+		Contact	contacts[8];
+		int		count;
+		int		nextIndex;
 };
 
