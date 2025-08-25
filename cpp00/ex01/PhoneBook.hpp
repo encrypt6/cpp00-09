@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 23:52:26 by elsikira          #+#    #+#             */
-/*   Updated: 2025/07/04 19:54:21 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/08/25 17:33:35 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class	PhoneBook
 	public:
 		PhoneBook();
 		void	add();
-		//void	search() const;
+		void	search();
 	private:
 		Contact	contacts[8];
 		int		count;

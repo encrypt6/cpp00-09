@@ -6,7 +6,7 @@
 /*   By: elsikira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:03:53 by elsikira          #+#    #+#             */
-/*   Updated: 2025/07/01 19:07:21 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/08/25 18:01:51 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ int	main(void)
 		if (command == "ADD")
 		{
 			phonebook.add();			
-
+			
+		}
+		else if (command == "SEARCH")
+		{
+			phonebook.search();
+			//get list of contacts and print them in search funct*
 		}
 		else if (command == "EXIT")
 		{

@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/07/04 20:17:16 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/08/25 18:07:13 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,18 @@ static std::string	getPrompt(const std::string &fieldName)
 	}
 	return (prompt);
 }
-/*
-void	getAllPrompts()
+
+void	PhoneBook::search(void)
 {
-		this->contacts[nextIndex].saveContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
-}*/
+	std::cout << "----------------------------------------------\n";
+	std::cout << "|  Index  |First Name|Last Name|Nick Name|\n";
+	std::cout << "----------------------------------------------\n";
+	//while (i < index)
+	//{
+		//std::cout << Contact; 
+	//}
+
+}
 
 void	PhoneBook::add(void)
 {
@@ -76,6 +83,7 @@ void	PhoneBook::add(void)
 	std::string darkestSecret = getPrompt("Darkest Secret");
 
 	//getAllPrompts();
+	//a faire sans casser
 	nextIndex = (nextIndex + 1) % 8;
 	if (count < 8)
 		count++;
