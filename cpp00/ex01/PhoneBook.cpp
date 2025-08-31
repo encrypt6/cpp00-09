@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/08/31 23:59:32 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/01 00:50:25 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,59 @@ static std::string	getPrompt(const std::string &fieldName)
 	return (prompt);
 }
 
-void	PhoneBook::search(void)
+static std::string truncate(const std::string& str)
 {
-	std::cout << "----------------------------------------------\n";
-	std::cout << "|  Index  |First Name|Last Name|Nick Name|\n";
-	std::cout << "----------------------------------------------\n";
-	//while (i < index)
-	//{
-		//std::cout << Contact; 
-	//
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return (str);
+}
 
+void PhoneBook::search() const
+{
+	if (count == 0)
+	{
+		std::cout << "There are no contacts to display.\n";
+		return;
+	}
+	std::cout << "---------------------------------------------\n";
+	std::cout << "|   Index  |First Name| Last Name| Nickname |\n";
+	std::cout << "---------------------------------------------\n";
+	for (int i = 0; i < count; ++i)
+	{
+		std::cout << "|"
+				  << std::setw(10) << i << "|"
+				  << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
+				  << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
+				  << std::setw(10) << truncate(contacts[i].getNickName()) << "|\n";
+	}
+	std::cout << "---------------------------------------------\n";
 
+	//get input index
+	std::string input;
+	std::cout << "Enter an index to view details: ";
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		return;
+	// Check input is digits only
+	if (input.find_first_not_of("0123456789") != std::string::npos)
+	{
+		std::cerr << "Invalid input. Index must be a number.\n";
+		return;
+	}
 
+	int index = std::atoi(input.c_str());
+	if (index < 0 || index >= count)
+	{
+		std::cerr << "Invalid index. Out of range.\n";
+		return;
+	}
+    // display full contact
+	std::cout << "📇 Contact Information:\n";
+	std::cout << "First Name:     " << contacts[index].getFirstName() << "\n";
+	std::cout << "Last Name:      " << contacts[index].getLastName() << "\n";
+	std::cout << "Nick Name:      " << contacts[index].getNickName() << "\n";
+	std::cout << "Phone Number:   " << contacts[index].getPhoneNumber() << "\n";
+	std::cout << "Darkest Secret: " << contacts[index].getDarkestSecret() << "\n";
 }
 
 void	PhoneBook::add(void)
@@ -84,6 +125,7 @@ void	PhoneBook::add(void)
 	std::string phoneNumber   = getPrompt("Phone Number");
 	std::string darkestSecret = getPrompt("Darkest Secret");
 
+	contacts[nextIndex].saveContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	//getAllPrompts();
 	//a faire sans casser
 	nextIndex = (nextIndex + 1) % 8;

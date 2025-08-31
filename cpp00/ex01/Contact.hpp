@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:52:47 by elsikira          #+#    #+#             */
-/*   Updated: 2025/08/31 23:56:58 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/01 00:34:59 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ class	Contact
 								std::string &nickName,
 								std::string &phoneNumber,
 								std::string &darkestSecret);
+		std::string getFirstName() const;
+    	std::string getLastName() const;
+    	std::string getNickName() const;
+    	std::string getPhoneNumber() const;
+    	std::string getDarkestSecret() const;
 };
 #endif
