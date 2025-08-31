@@ -6,7 +6,7 @@
 #    By: elsikira <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 11:33:50 by elsikira          #+#    #+#              #
-#    Updated: 2025/07/01 19:58:41 by elsikira         ###   ########.fr        #
+#    Updated: 2025/08/31 23:54:54 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,5 +34,4 @@ fclean:
 re: fclean all
 
 .PHONY: all clean fclean re
-
 

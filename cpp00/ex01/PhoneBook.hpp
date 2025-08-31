@@ -6,12 +6,16 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 23:52:26 by elsikira          #+#    #+#             */
-/*   Updated: 2025/08/25 17:33:35 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/08/31 23:53:52 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries.h"
+#ifndef CONTACT_H
+#define CONTACT_H
 
+#include "Contact.hpp"
+#include <string>
+#include <iostream>
 class	PhoneBook
 {
 	public:
@@ -23,4 +27,4 @@ class	PhoneBook
 		int		count;
 		int		nextIndex;
 };
-
+#endif

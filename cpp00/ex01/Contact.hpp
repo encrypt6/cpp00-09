@@ -6,12 +6,13 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:52:47 by elsikira          #+#    #+#             */
-/*   Updated: 2025/07/04 20:11:56 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/08/31 23:56:58 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libraries.h"
-
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
+#include <string>
 class	Contact
 {
 	private:
@@ -30,3 +31,4 @@ class	Contact
 								std::string &phoneNumber,
 								std::string &darkestSecret);
 };
+#endif
