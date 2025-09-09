@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/01 00:50:25 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/09 20:08:44 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ static std::string	getPrompt(const std::string &fieldName)
 
 static std::string truncate(const std::string& str)
 {
-    if (str.length() > 10)
-        return str.substr(0, 9) + ".";
-    return (str);
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return (str);
 }
 
 void PhoneBook::search() const

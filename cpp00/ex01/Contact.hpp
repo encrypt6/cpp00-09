@@ -31,9 +31,9 @@ class	Contact
 								std::string &phoneNumber,
 								std::string &darkestSecret);
 		std::string getFirstName() const;
-    	std::string getLastName() const;
-    	std::string getNickName() const;
-    	std::string getPhoneNumber() const;
-    	std::string getDarkestSecret() const;
+		std::string getLastName() const;
+		std::string getNickName() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkestSecret() const;
 };
 #endif
