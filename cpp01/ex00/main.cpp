@@ -6,8 +6,15 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:24:34 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/09 20:24:55 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/09 22:29:47 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+int	main(void)
+{
+	Zombie	zombie;
+
+	zombie.announce();
+}
