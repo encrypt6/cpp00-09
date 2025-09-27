@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:08:51 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/27 17:13:38 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/27 17:33:58 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ class	Fixed
 		Fixed(const Fixed &copy);
 		
 		//copy assignement operator = assigns value of an object to another existing object
-		Fixed &operator=(const Fixed &copy);
+		Fixed	&operator=(const Fixed &copy);
 		
+		Fixed	
+
 		//Destructor
 		~Fixed();
 		
