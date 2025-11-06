@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 20:17:46 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/09 20:22:38 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/15 21:06:19 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 #define ZOMBIE_HPP
 
 #include <string>
-#include <iostream>
 
 class	Zombie
 {
-	public:
-		void	announce(void);
-
 	private:
 		std::string name;
-		
+	public:
+		Zombie(std::string name);
+		~Zombie();
+		void	announce(void);
 };
+
+Zombie	*newZombie(std::string name);
+
+void	randomChump(std::string name);
+
 #endif

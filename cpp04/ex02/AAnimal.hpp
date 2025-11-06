@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 21:21:42 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/29 21:25:07 by elsikira         ###   ########.fr       */
+/*   Created: 2025/10/03 20:23:38 by elsikira          #+#    #+#             */
+/*   Updated: 2025/10/05 11:58:03 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef
-#define
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
-class	ClapTrap
+#include <iostream>
+
+class	AAnimal
 {
-	private:
-		std::string	_name;
-
-
+	protected:
+		std::string	_type;
 
 	public:
-		ClapTrap(_name);
-		~ClapTrap();
-		void	attack(const std::string &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amout);
+		AAnimal();
+		AAnimal(std::string name);
+		AAnimal(const AAnimal &other);
+		AAnimal	&operator=(const AAnimal &other);
+		virtual	~AAnimal();
 
-}
-
+		virtual void	makeSound() const = 0; //= pure virtual, instantiation impossible
+		const std::string	getType()const;
+};
 
 #endif

@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/09 22:40:57 by elsikira          #+#    #+#              #
-#    Updated: 2025/09/29 21:21:32 by elsikira         ###   ########.fr        #
+#    Created: 2025/09/12 19:55:52 by elsikira          #+#    #+#              #
+#    Updated: 2025/09/27 16:51:08 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clapTrap
+NAME = orthodoxCanonical 
 
 CXX = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

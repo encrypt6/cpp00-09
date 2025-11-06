@@ -17,12 +17,6 @@ Contact::Contact()
 
 }
 
-Contact::~Contact()
-{
-
-}
-
-
 void Contact::saveContact(std::string &firstName,
 		std::string &lastName,
 		std::string &nickName,  

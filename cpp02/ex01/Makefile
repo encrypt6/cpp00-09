@@ -6,11 +6,11 @@
 #    By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 19:55:52 by elsikira          #+#    #+#              #
-#    Updated: 2025/09/27 16:51:08 by elsikira         ###   ########.fr        #
+#    Updated: 2025/09/30 13:10:06 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = orthodoxCanonical 
+NAME = fixedPoint 
 
 CXX = c++
 
