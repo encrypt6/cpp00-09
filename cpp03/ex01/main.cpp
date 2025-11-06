@@ -5,31 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 19:03:38 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/28 17:32:31 by elsikira         ###   ########.fr       */
+/*   Created: 2025/10/01 18:24:35 by elsikira          #+#    #+#             */
+/*   Updated: 2025/10/02 21:51:44 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include "iostream"
+#include "ScavTrap.hpp"
 
-int	main(void)
-{
-	Fixed	a; //default constructor
-	Fixed	const b(10); //int constructor
-	Fixed	const c(42.42f); //float consructor
-	Fixed	const d(b); //copy constructor
-
-	a = Fixed(1234.4321f); //copy assignement operator constructor
+int	main(void){
 	
-	std::cout << "a is " << a << std::endl; //<< operator
-	std::cout << "b is " << b << std::endl; // << operator
-	std::cout << "c is " << c << std::endl; // << operator
-	std::cout << "d is " << d << std::endl; // << operator 
+	{
+		/* polymorphism*/
+		ClapTrap	*a = new ScavTrap("AlphaScavTrap");
 
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl; //<<operator
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;//<<operator
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl; //<<operator
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl; //<< operator
-	return 0;
+		a->printInfos();
+		a->attack("Override test");
+
+		/* Second Test */
+		ScavTrap	b("BetaScavTrap");
+		
+		b.printInfos();
+		delete	a;
+	
+		/* Third Test */
+		ScavTrap	c(b);
+	
+		c.printInfos();
+	}
+	{
+		/*Fight Test here */
+		ScavTrap	a("AlphaScav");
+		ScavTrap	b("BetaScav");
+		ScavTrap	c;
+
+		while (a.goodState() && b.goodState())
+		{
+			a.attack(b.getName());
+			a.takeDamage(b.getDamagePoints());
+			b.attack(a.getName());
+			b.takeDamage(a.getDamagePoints());
+			b.beRepaired(1);
+		}
+		a.guardGate();
+		b.guardGate();
+	}
+	return (0);
 }
+

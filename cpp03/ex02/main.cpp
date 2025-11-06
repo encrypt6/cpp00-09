@@ -5,38 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 19:03:38 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/30 13:05:33 by elsikira         ###   ########.fr       */
+/*   Created: 2025/10/01 18:24:35 by elsikira          #+#    #+#             */
+/*   Updated: 2025/10/03 18:07:28 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void )
-{
+//#include "ScavTrap.hpp"
+
+
+int	main(void){
+	
 	{
-		Fixed a;
-		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-		std::cout << a << std::endl;
-		std::cout << ++a << std::endl;
-		std::cout << a << std::endl;
-		std::cout << a++ << std::endl;
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << Fixed::max( a, b ) << std::endl;
-		std::cout << Fixed::min( a, b ) << std::endl;
-	}
+		/* PolyMorphism */
+		ClapTrap	*a = new FragTrap("AlphaScavTrap");
 
+		a->printInfos();
+
+		/* Second Test */
+		FragTrap	b("BetaScavTrap");
+		
+		b.printInfos();
+		delete	a;
+	
+		/* Third Test */
+		FragTrap	c(b);
+	
+		c.printInfos();
+	}
 	{
-		// test des operateurs arithmetique
-		Fixed a(1);
-		Fixed const b( Fixed( 2 ) );
-		std::cout << " a * b = " << a * b << std::endl;
-		std::cout << " a + b = " << a + b << std::endl;
-		std::cout << " a - b = " << a - b << std::endl;
-		std::cout << " a / b = " << a / b << std::endl;
-	}
+		/*Fight */
+		ScavTrap	a("ScavTrap");
+		FragTrap	b("FragTrap");
 
-	return 0;
+		while (a.goodState() && b.goodState()) {
+			a.attack(b.getName());
+			b.takeDamage(a.getDamagePoints());
+			b.attack(a.getName());
+			a.takeDamage(b.getDamagePoints());
+			b.beRepaired(1);
+			b.highFivesGuys();
+		}
+	}
+	return (0);
 }
+

@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/12 19:55:52 by elsikira          #+#    #+#              #
-#    Updated: 2025/09/30 13:10:31 by elsikira         ###   ########.fr        #
+#    Created: 2025/09/09 22:40:57 by elsikira          #+#    #+#              #
+#    Updated: 2025/10/03 11:33:22 by elsikira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixedPoint 
+NAME = FragTrap
 
 CXX = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

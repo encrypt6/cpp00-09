@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 19:03:38 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/27 16:06:48 by elsikira         ###   ########.fr       */
+/*   Created: 2025/10/01 18:24:35 by elsikira          #+#    #+#             */
+/*   Updated: 2025/10/02 21:44:57 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include "iostream"
+#include "ClapTrap.hpp"
 
 int	main(void)
 {
-	Fixed a; //calls Default constructor
-	Fixed b(a); //calls copy constructor : creates 'b' and takes 'a' value
-	Fixed c;
+	
+	ClapTrap	trap[2] = {ClapTrap("AlphaTrap"), ClapTrap("BetaTrap")};
 
-	c = b; //calls copy assignement operator constructor
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
-	return 0;
+	while (trap[0].goodState() && trap[1].goodState())
+	{
+		trap[0].attack(trap[1].getName());
+		trap[1].takeDamage(trap[0].getDamagePoints());
+		trap[1].beRepaired(1);
+	}
+	trap[0].attack(trap[1].getName());
+	trap[0].beRepaired(1);
+	return (0);
 }
