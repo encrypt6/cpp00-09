@@ -21,20 +21,13 @@ class	Fixed
 		int					_nb;
 		static const int	_fract;	
 	public:
-		//default constructor = to initialize an object to default values
-		Fixed();
+		Fixed();//default constructor = to initialize an object to default value
+		Fixed(const Fixed &other);//copy constructor = to initialize a new object to the value of existing object (copy)
+		Fixed &operator=(const Fixed &other);//copy assignement operator = assigns value of an object to another existing object
+		~Fixed();//Destructor
 		
-		//copy constructor = to initialize a new object to the value of existing object
-		Fixed(const Fixed &copy);
-		
-		//copy assignement operator = assigns value of an object to another existing object
-		Fixed &operator=(const Fixed &copy);
-		
-		//Destructor
-		~Fixed();
-		
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		int		getRawBits(void) const; // returns the raw value of the nb
+		void	setRawBits(int const raw); // sets the raw value to nb
 };
 
 #endif

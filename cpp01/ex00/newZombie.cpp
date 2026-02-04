@@ -5,9 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 22:41:03 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/09 22:41:04 by elsikira         ###   ########.fr       */
+/*   Created: 2025/09/12 20:20:13 by elsikira          #+#    #+#             */
+/*   Updated: 2025/09/15 18:58:51 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
+Zombie *newZombie(std::string name)
+{
+	return new Zombie(name);
+}

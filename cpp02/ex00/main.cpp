@@ -15,11 +15,11 @@
 
 int	main(void)
 {
-	Fixed a;
-	Fixed b(a);
+	Fixed a; //calls Default constructor
+	Fixed b(a); //calls copy constructor : creates 'b' and takes 'a' value
 	Fixed c;
 
-	c = b;
+	c = b; //calls copy assignement operator constructor
 
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;

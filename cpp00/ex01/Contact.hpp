@@ -24,16 +24,15 @@ class	Contact
 	
 	public:
 		Contact();
-		~Contact();
 		void	saveContact(std::string &firstName,
 								std::string &lastName,
 								std::string &nickName,
 								std::string &phoneNumber,
 								std::string &darkestSecret);
 		std::string getFirstName() const;
-		std::string getLastName() const;
-		std::string getNickName() const;
-		std::string getPhoneNumber() const;
-		std::string getDarkestSecret() const;
+    	std::string getLastName() const;
+    	std::string getNickName() const;
+    	std::string getPhoneNumber() const;
+    	std::string getDarkestSecret() const;
 };
 #endif

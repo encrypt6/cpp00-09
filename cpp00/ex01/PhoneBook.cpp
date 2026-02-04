@@ -6,7 +6,7 @@
 /*   By: elsikira <elsikira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 00:01:18 by elsikira          #+#    #+#             */
-/*   Updated: 2025/09/09 20:08:44 by elsikira         ###   ########.fr       */
+/*   Updated: 2025/09/01 00:50:25 by elsikira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,47 +26,11 @@ static bool	isDigits(const std::string &str)
 	return (!str.empty());
 }
 
-static std::string	getPrompt(const std::string &fieldName)
-{
-	std::string	prompt;
-
-	while (prompt.empty() && !std::cin.eof())
-	{
-		std::cout << fieldName << "?\n";
-		if (!std::getline(std::cin, prompt))
-		{
-			if (std::cin.eof())
-				return ("");
-			else
-			{
-				std::cin.clear();
-				std::cerr << "Error: " << fieldName << " is empty\n";
-				continue;
-			}
-		}
-		else if (prompt.empty())
-		{
-			std::cerr << "Error : " << fieldName << " is empty\n";
-			continue;
-		}
-		if (fieldName == "Phone Number" && !isDigits(prompt))
-		{
-			if (!prompt.empty())
-			{
-				prompt.clear();
-				std::cerr << "Error : only digits are accepted.\n";
-			}
-			continue;
-		}
-	}
-	return (prompt);
-}
-
 static std::string truncate(const std::string& str)
 {
-	if (str.length() > 10)
-		return str.substr(0, 9) + ".";
-	return (str);
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return (str);
 }
 
 void PhoneBook::search() const
@@ -95,13 +59,16 @@ void PhoneBook::search() const
 	std::getline(std::cin, input);
 	if (std::cin.eof())
 		return;
-	// Check input is digits only
+	
+	// check if this function returns different than npos (meaning it has found a bad character)
+	//find anything different than 0123456789
 	if (input.find_first_not_of("0123456789") != std::string::npos)
 	{
 		std::cerr << "Invalid input. Index must be a number.\n";
 		return;
 	}
 
+	//transforms input characters into int
 	int index = std::atoi(input.c_str());
 	if (index < 0 || index >= count)
 	{
@@ -109,12 +76,54 @@ void PhoneBook::search() const
 		return;
 	}
     // display full contact
-	std::cout << "📇 Contact Information:\n";
+	std::cout << "Contact Information:\n";
 	std::cout << "First Name:     " << contacts[index].getFirstName() << "\n";
 	std::cout << "Last Name:      " << contacts[index].getLastName() << "\n";
 	std::cout << "Nick Name:      " << contacts[index].getNickName() << "\n";
 	std::cout << "Phone Number:   " << contacts[index].getPhoneNumber() << "\n";
 	std::cout << "Darkest Secret: " << contacts[index].getDarkestSecret() << "\n";
+}
+
+static std::string	getPrompt(const std::string &fieldName)
+{
+	std::string	prompt;
+
+	while (prompt.empty() && !std::cin.eof())
+	{
+		//asks to fill 
+		std::cout << fieldName << "?\n";
+		//if not empty
+		if (!std::getline(std::cin, prompt))
+		{
+			//if end of file
+			if (std::cin.eof())
+				return ("");
+			//if not end of file and empty
+			else
+			{
+				std::cin.clear();
+				std::cerr << "Error: " << fieldName << " is empty\n";
+				continue;
+			}
+		}
+		//if prompt empty
+		else if (prompt.empty())
+		{
+			std::cerr << "Error : " << fieldName << " is empty\n";
+			continue;
+		}
+		//checks if only digits for phone number
+		if (fieldName == "Phone Number" && !isDigits(prompt))
+		{
+			if (!prompt.empty())
+			{
+				prompt.clear();
+				std::cerr << "Error : only digits are accepted.\n";
+			}
+			continue;
+		}
+	}
+	return (prompt);
 }
 
 void	PhoneBook::add(void)
